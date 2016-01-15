@@ -23,11 +23,11 @@ window.onload = function() {
 	// 4、2次贝塞尔曲线形，使用path命令Q
 //	paper.path("M240,40L300,40L300,100").attr('stroke', 'grey');
 //	paper.path("M240,40 Q300,40 300,200").attr('stroke', 'red');	//Q: 2次贝塞尔曲线形
-	
+
 	// 5、2次贝塞尔曲线形，使用path命令Q和T（第一个是正常绘制，第二个光滑连接）
 	/*paper.path('M10,250 L90,130  L160,160 L250,190 L250,70');
 	paper.path('M10,250 Q90,130  160,160 T250,70').attr('stroke', 'red');	// Q	T
-*/	
+*/
 	// 6、绘制3次贝赛尔曲线，使用命令C，平滑画线使用命令S
 	paper.path('M320,120 L350,180  L450,260 L480,140');
 	
