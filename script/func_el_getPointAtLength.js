@@ -26,6 +26,7 @@ window.onload = function() {
     var point, circle;
     var i=0;
     //http://wenku.baidu.com/link?url=oB8foPowTHGf2RBj2vdxJNf-PlOSg0Rt_mr1lu5WUuMPLuhgjQ1WmRkT7Hz7t19V4bFLAiNc7gQH7Og857Tn2yYDM_K2vepSOSUtGIAY9S_
+    
     while( i<=5 ){
     	
     	point = pathQ.getPointAtLength( i*devidedPathQLength );
