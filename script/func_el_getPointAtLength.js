@@ -15,6 +15,34 @@ window.onload = function() {
     
     console.log("x:" + pointObjQ.x + ",y:" + pointObjQ.y + ",Alpha:" + pointObjQ.alpha);
     
+//    Element.getTotalLength()
+    
+    var pathLength = path.getTotalLength();
+    var pathQLength = pathQ.getTotalLength();
+    var devidedPathQLength = pathQLength/5;
+    
+    console.log( pathLength, pathQLength );
+    
+    var point, circle;
+    var i=0; 
+    while( i<=5 ){
+    	
+    	point = pathQ.getPointAtLength( i*devidedPathQLength );
+    	console.log( i+1 +':', point);
+    	
+    	circle = paper.circle( point.x, point.y, 3 ).attr({
+    		'fill': 'RGBA(2,3,4,.5)',
+    		//'fill': '#17A9c6',
+    		'stroke': '#2a6570',
+    		'stroke-width': 2,
+    		'opacity': .2
+    	});
+    	circle.click( function(e){
+    		console.log( this );
+    	});
+    	
+    	i++;
+    }
 }
 
 /*

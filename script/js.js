@@ -5,6 +5,7 @@ window.onload = function(){
 	// that is 320px wide by 200px high.
 	// Canvas is created at the viewport’s 10,50 coordinate.
 //	var paper = Raphael(10, 50, 320, 200);
+	
 	// Canvas is created at the top left corner of the #notepad element
 	// (or its top right corner in dir="rtl" elements)
 //	var paper = Raphael(document.getElementById("notepad"), 320, 200);

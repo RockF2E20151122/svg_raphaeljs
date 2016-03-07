@@ -1,6 +1,7 @@
 window.onload = function() {
 
 	var paper = Raphael("notepad", 700, 600);
+
 	// 1、直线使用path命令L
 /*	paper.path("M20,20L100,20z").attr({
 		"fill" : "#5DDEF4",
@@ -35,6 +36,11 @@ window.onload = function() {
 	
 	paper.path('M320,120  S450,260  480,140').attr('stroke', 'yellow');		//S	平滑曲线
 	
+	paper.path('M400,200 C300,100 100,100 0,200').attr('stroke', 'red'); 	//使用命令C
+	paper.path('M400,200 S300,100 100,100 0,200').attr('stroke', 'black'); 	//使用命令S
+	
+	
+
 }
 
 /*
