@@ -43,11 +43,53 @@ window.onload = function(){
 		}
 		
 	};
+//	var drawBubble = function( argu ){
+//		var paper = Raphael( argu.containerId, 87, 55 );
+//		
+//		window.paper = paper;
+//		
+//		var containerId = '#'+argu.containerId;
+//		var container = document.querySelector( containerId );
+//		var x = argu.position.x||5;
+//		var y = argu.position.y||50;
+//		var r = argu.r || 4;
+//		container.style.left = '200px';
+//		window.container = container;
+//		
+//		var circleAttr = {
+//			'fill': '#003f87',
+//			'stroke': '#003f87',
+//			'stroke-width': 0,
+//			'opacity': .5
+//		},
+//		pathAttr = {	//H,V
+//			"fill" : "white",
+//			"stroke" : "black",
+//			"stroke-width" : 0
+//		},
+//		textAttr = {
+//			'font-weight':'700',
+//			'color': '#003f87',
+//			'font-size': '14'
+//		};
+//		var circle = paper.circle( x, y, 4 ).attr( circleAttr );
+//		var path = paper.path( 'M'+x+','+y+'v-50h85v30z').attr( pathAttr );
+//		var text = paper.text( '50%', 20, argu.price ).attr( textAttr );
+//
+//	}(argu )
+	
+	var argu = {
+		'containerId': 'dot',
+		'price': '$55.09',
+		'position': {
+			'x': 5,
+			'y': 50
+		}
+	};
 	var drawBubble = function( argu ){
 		var paper = Raphael( argu.containerId, 87, 55 );
 		
 		window.paper = paper;
-		
 		var containerId = '#'+argu.containerId;
 		var container = document.querySelector( containerId );
 		var x = argu.position.x||5;
@@ -55,6 +97,7 @@ window.onload = function(){
 		var r = argu.r || 4;
 		container.style.left = '200px';
 		window.container = container;
+		var idBase = 'id';
 		
 		var circleAttr = {
 			'fill': '#003f87',
@@ -73,11 +116,18 @@ window.onload = function(){
 			'font-size': '14'
 		};
 		var circle = paper.circle( x, y, 4 ).attr( circleAttr );
+		circle.id = idBase + 'c';
 		var path = paper.path( 'M'+x+','+y+'v-50h85v30z').attr( pathAttr );
 		var text = paper.text( '50%', 20, argu.price ).attr( textAttr );
-
+		path.id = idBase + 'p';
+		text.id = idBase + 't';
+		
+		path.click(function(){
+			paper.getById(path.id).remove();
+			paper.getById(text.id).remove();
+			paper.getById(circle.id).remove();
+		});
 	}(argu )
-
 }
 
 //positioning: the container / the elements

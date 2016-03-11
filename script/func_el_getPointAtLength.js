@@ -45,6 +45,24 @@ window.onload = function() {
     	
     	i++;
     }
+    
+    var center = function( path ){
+    	if( !path ) return;
+        var pathQLength = path.getTotalLength();
+        var point = pathQ.getPointAtLength( pathQLength/2 );
+        return point;
+    };
+    
+    var centerPoint = center( pathQ );
+    console.log('center:', centerPoint );
+    
+    paper.circle( centerPoint.x, centerPoint.y, 3 ).attr({
+		'fill': 'RGBA(2,3,4,.5)',
+		//'fill': '#17A9c6',
+		'stroke': 'red',
+		'stroke-width': 1,
+		'opacity': .7
+	});
 }
 
 /*
