@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>research of raphael.js</title>
+
+<!-- <script data-main="script/main" src="script/libs/require.js"></script>
+ -->
+<style type="text/css">
+body {
+	padding: 0;
+	margin: 0;
+}
+/*01, 文本锯齿*/
+.textClass {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+</style>
+<link rel="stylesheet" href="style/svg_native.css" />
+</head>
+
+<body>
+
+	<svg height="100" width="500">
+		<text y="50" x="250" text-anchor="middle" style="font-size: 40px"
+			class="textClass">Hello, this is the Rock. </text>
+	</svg>
+	<ol>
+		<li class="float_three">
+			<h4>10×10px SVG</h4>
+			<div id="star-10" class="star"></div>
+		</li>
+		<li class="float_three">
+			<h4>1000×1000px SVG</h4>
+			<div id="star-1000" class="star"></div>
+		</li>
+		<li class="float_three">
+			<h4>10×10px多边形缩放成1000×1000px</h4>
+			<div id="star-10s" class="star"></div>
+		</li>
+	</ol>
+	<script type="text/javascript" src="script/native_pixelated.js"></script>
+</body>
+</html>
+<!-- 02,issues:
+	- http://www.zhangxinxu.com/wordpress/2012/08/svg-feature-support-bugs/
+	惊叹的3D变换效果实现之前，其要做一件事件——就是对图形进行格栅化。换句话说就是把一切的矢量图或者位图都变成绝对的位图。自然，SVG矢量图形也不能幸免。因此，在3D变换进行的时候，我们不仅会看到文字丑陋的边缘锯齿，也会看到SVG图形的像素化以及模糊！ 
+	- 
+	
+	-->

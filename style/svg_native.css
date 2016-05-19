@@ -1,0 +1,23 @@
+
+.star {
+	background-color: #eee;
+	padding: 1em;
+	width: 8em;
+	height: 8em;
+	background-repeat: no-repeat;
+	background-size: 10em 10em;
+	background-position: 1em 1em;
+	border-radius: 50%;
+}
+
+#star-10 {
+	background-image: url(../images/svg/star-10x10.svg);
+}
+
+#star-1000 {
+	background-image: url(../images/svg/star-1000x1000.svg);
+}
+
+#star-10s {
+	background-image: url(../images/svg/star-10x10s.svg);
+}
