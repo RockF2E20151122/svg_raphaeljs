@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>poc for bug EVENT-1526</title>
+
+<!-- <script data-main="script/main" src="script/libs/require.js"></script>
+ -->
+<style type="text/css">
+body {
+	padding: 0;
+	margin: 0;
+}
+/*01, 文本锯齿*/
+.textClass {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+</style>
+<link rel="stylesheet" href="style/svg_native.css" />
+</head>
+
+<body>
+
+<div id="container">
+</div>
+<!-- 
+	<svg height="655" version="1.1" width="655"
+		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		style="overflow: hidden; position: relative; left: -0.5px;"
+		viewBox="0 0 4096 4096" preserveAspectRatio="xMinYMin" id="cont">
+
+		<path fill="#ff6600" stroke="#333333"
+			d="M105,1372.857C105,1372.857,785.963,601.781,2113.422,655.781C2922.2960000000003,705.781,3560.5,1164.5,4033.5699999999997,1701.427L3776.4259999999995,1944.2839999999999C3776.4259999999995,1944.2839999999999,3119.2819999999992,1115.7129999999997,2097.8549999999996,1032.5699999999997C1012.143,987.144,412.143,1587.143,105,1965.714V1372.857Z"
+			zid="43191" id="63168" fill-opacity="0.8" stroke-width="2"
+			stroke-opacity="1"
+			style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.8; stroke-opacity: 1;"></path> -->
+			
+		<!-- <circle id="circ" cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" /> -->
+</svg>
+
+	<script type="text/javascript" src="script/libs/raphael.js"></script>
+	<script type="text/javascript" src="svg/native_circle.js"></script>
+
+</body>
+</html>
+<!-- 02,issues:
+	- http://www.zhangxinxu.com/wordpress/2012/08/svg-feature-support-bugs/
+	惊叹的3D变换效果实现之前，其要做一件事件——就是对图形进行格栅化。换句话说就是把一切的矢量图或者位图都变成绝对的位图。自然，SVG矢量图形也不能幸免。因此，在3D变换进行的时候，我们不仅会看到文字丑陋的边缘锯齿，也会看到SVG图形的像素化以及模糊！ 
+	- 
+	
+	-->
