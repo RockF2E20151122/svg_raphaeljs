@@ -12,7 +12,11 @@
 	</head>
 
 	<body>
-		<div id="chartdiv"></div>
+		<div id="chartdiv"> </div>
+		<button>switch option</button>
+		<div id="data">
+			<span>  </span><span>  </span>
+		</div>
 
 		<script src="lib/ammap.js"></script>
 		<script src="lib/usaLow.js"></script>
@@ -169,7 +173,10 @@
 				id : "US-WY",
 				value : 493782
 			}];
-
+			
+			var meta = [{"identity":"US-WA","clicks":455,"trades":47},{"identity":"US-SD","clicks":444,"trades":12},{"identity":"US-IL","clicks":274,"trades":27},{"identity":"US-MI","clicks":15,"trades":40}];
+			var switcher = true;
+			
 			var translate = function(arr) {
 				if (!arr)
 					return;
@@ -178,7 +185,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					a.push({
 						id : arr[i].identity,
-						value : arr[i].clicks
+						value : switcher? arr[i].clicks: arr[i].trades
 					});
 				}
 				return a;
@@ -208,7 +215,7 @@
 			};
 			
 			makeChart( areas );
-			var ws = new WebSocket("ws://d-shc-15008346:8080/grizzly-websockets/echo");
+			var ws = new WebSocket("ws://localhost:8080/grizzly-websockets/echo");
 			ws.onopen = function() {
 				console.log('on open');
 				ws.send('{id:23546}');
